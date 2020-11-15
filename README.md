@@ -1,3 +1,4 @@
 # Mphasis_Test
 MPhasis credit exposure mock API
-url -> http://localhost:8080/dashboard/findAllExposure
+Api url -> http://localhost:8080/dashboard/findAllExposure
+Swagger url -> http://localhost:8080/swagger-ui.html
