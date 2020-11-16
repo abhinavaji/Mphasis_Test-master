@@ -1,18 +1,26 @@
 package com.banking.VO;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class SectorVO implements Serializable {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class SectorVO extends BaseResponseVO {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1123218677529739533L;
-
+	private Integer sectorId;
 	private String sectorName;
 	private Integer totalExposure;
-	private long totalFacilities;
 	private long totalCustomers;
+
+	public Integer getSectorId() {
+		return sectorId;
+	}
+
+	public void setSectorId(Integer sectorId) {
+		this.sectorId = sectorId;
+	}
 
 	public String getSectorName() {
 		return sectorName;
@@ -30,14 +38,6 @@ public class SectorVO implements Serializable {
 		this.totalExposure = totalExposure;
 	}
 
-	public long getTotalFacilities() {
-		return totalFacilities;
-	}
-
-	public void setTotalFacilities(long totalFacilities) {
-		this.totalFacilities = totalFacilities;
-	}
-
 	public long getTotalCustomers() {
 		return totalCustomers;
 	}
@@ -48,8 +48,8 @@ public class SectorVO implements Serializable {
 
 	@Override
 	public String toString() {
-		return "SectorVO [sectorName=" + sectorName + ", totalExposure=" + totalExposure + ", totalFacilities="
-				+ totalFacilities + ", totalCustomers=" + totalCustomers + "]";
+		return "SectorVO [sectorId=" + sectorId + ", sectorName=" + sectorName + ", totalExposure=" + totalExposure
+				+ ", totalCustomers=" + totalCustomers + "]";
 	}
 
 }

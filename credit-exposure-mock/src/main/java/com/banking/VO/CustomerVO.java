@@ -1,8 +1,9 @@
 package com.banking.VO;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-public class CustomerVO implements Serializable {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class CustomerVO extends BaseResponseVO {
 
 	/**
 	 * 
@@ -12,6 +13,7 @@ public class CustomerVO implements Serializable {
 	private String name;
 	private Integer age;
 	private String Address;
+	private String type;
 
 	public String getName() {
 		return name;
@@ -37,9 +39,17 @@ public class CustomerVO implements Serializable {
 		Address = address;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	@Override
 	public String toString() {
-		return "CustomerVO [name=" + name + ", age=" + age + ", Address=" + Address + "]";
+		return "CustomerVO [name=" + name + ", age=" + age + ", Address=" + Address + ", type=" + type + "]";
 	}
 
 }
