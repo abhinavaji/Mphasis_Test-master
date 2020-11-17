@@ -9,8 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table(name = "SECTOR_DTL")
 public class Sector {
@@ -22,7 +20,6 @@ public class Sector {
 	@Column(name = "SECTOR_NAME")
 	private String name;
 
-	@JsonIgnoreProperties("sector")
 	@OneToMany(mappedBy = "sector", fetch = FetchType.LAZY)
 	private Set<FinancialDtl> financialDtl;
 

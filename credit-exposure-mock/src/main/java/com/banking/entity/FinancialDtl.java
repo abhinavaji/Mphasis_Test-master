@@ -8,8 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table(name = "FINANCIAL_DTL")
 public class FinancialDtl {
@@ -30,7 +28,6 @@ public class FinancialDtl {
 	@Column(name = "SECTOR_ID")
 	private Integer sectorId;
 
-	@JsonIgnoreProperties("financialDtl")
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(insertable = false, updatable = false, name = "SECTOR_ID")
 	private Sector sector;
@@ -38,7 +35,6 @@ public class FinancialDtl {
 	@Column(name = "FACILITY_ID")
 	private Integer facilityId;
 
-	@JsonIgnoreProperties("financialDtl")
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(insertable = false, updatable = false, name = "FACILITY_ID")
 	private Facility facilities;
